@@ -4,8 +4,8 @@
 
 using namespace std;
 
-stack<char>s1;
-stack<char>s2;
+stack<char>s1; //s1 is numbers
+stack<char>s2; //s2 is symbols
 
 int priority(char ch){
 	if(ch == '(' || ch == ')')
@@ -53,11 +53,34 @@ int main(){
 				s2.pop();
 			}else
 			{
-				
+				while(!s2.empty() && priority(str[i]) <= priority(s2.top()))&& s2.top()!='(')
+				{
+					s1.push(s2.top());
+					s2.pop();
+				}
+				s2.push(str[i]);
 			}
 		}
 	}
 	
+	while(!s2.empty()){
+		s1.push(s2.top());
+		s2.pop();
+	}
+	
+	while(!s1.empty()){
+		str[k++] = s1.top();
+		s1.pop());
+	}
+	reverse(str,str+k);
+	str[k] = 0;
+	
+	int x, y, tmp = 0, k = 0;
+	for(int i= 0 ; i < n ; i++){
+		if(str[i] == '#')
+			continue;
+		else if(str[i] == '+' || ch[i] == '-' || str[])
+	}
 	
 	return 0;
 }
