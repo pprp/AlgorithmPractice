@@ -29,28 +29,31 @@ int calc(int a, int b, char op){
 
 int main(){
 	string str;
-	cin >> str;
-	
+	cin >> str;	
 	
 	//transform
 	for(int i = 0 ; i < str.length(); i++){
-		if(str[i]>= '0' && str[i] <= '9'){
+		if(str[i]>= '0' && str[i] <= '9'){ // is number
 			s1.push(str[i]);
 			if(i == str.length()-1 || [i+1]<'0'||str[i+1]>'9'){
 				s1.push('#');
 			}
 		}
-		else
+		else // is symbol
 		{
-			if(s2.empty() || str[i] == '(' || priority(str[i]) > priority(s2.top())){
+			if(s2.empty() || str[i] == '(' || priority(str[i]) > priority(s2.top())){ // is (
 				s2.push(str[i]);
 			}
-			else if(str[i] == ')')
+			else if(str[i] == ')') // is )
 			{
 				while(s2.top())!='('){
 					s1.push(s2.top());
 					s2.pop(); 
 				}
+				s2.pop();
+			}else
+			{
+				
 			}
 		}
 	}
