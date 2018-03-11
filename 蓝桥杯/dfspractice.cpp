@@ -66,8 +66,7 @@ void dfs2(int now){
 		t = a[now];
 		a[now] = a[i];
 		a[i] = t;
-	}
-		
+	}	
 	
 }
 
