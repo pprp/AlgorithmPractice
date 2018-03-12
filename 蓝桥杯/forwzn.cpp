@@ -1,7 +1,19 @@
 #include <iostream>
 #include <cstring>
+#include <stack>
 
 using namespace std;
+
+struct node
+{
+	int x, y;
+	node(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+}
+
+stack<node>
 
 int a[3][4];
 bool vis[3][4];
