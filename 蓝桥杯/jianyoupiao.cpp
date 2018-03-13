@@ -67,7 +67,7 @@ void dfs(int x, int y, int now){
 		{
 			res++;
 		}		
-//		ccccc++;
+//		ccccc++;s
 		return;
 	}
 	if(x == r) return ;
@@ -87,7 +87,7 @@ void dfs(int x, int y, int now){
 		{
 			dfs(x+1,0,now);	
 		}
-	}
+	}		
 }
 
 int main(){
