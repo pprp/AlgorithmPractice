@@ -81,19 +81,7 @@ int main(){
 			}
 			i++;
 		}
-		
-//		for(int i = 0 ; i < lena+10 ; i++)
-//		cout << a[i];
-//		cout << endl;
-//		
-//		for(int j = 0 ; j < lenb+10 ; j++)
-//		cout << b[j];
-//		cout << endl;
 
-//		cout << "flag!"<< endl;
-//		for(int i = 0 ; i < k ; i++)
-//		cout << ans[i];
-//		cout << endl;
 		
 		while(a[i] != -1){
 			int tmp = a[i] + c;

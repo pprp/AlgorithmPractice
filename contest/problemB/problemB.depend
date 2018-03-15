@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1521030699 source:c:\users\pprp\documents\github\acm\contest\problemb\main.cpp
+	<cstdio>
+	<queue>
+	<iostream>
+
