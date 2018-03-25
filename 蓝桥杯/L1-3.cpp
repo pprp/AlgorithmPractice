@@ -46,22 +46,28 @@ int main()
   reverse();
   int len1 = add1.length();
   int len2 = add2.length();
+  // cout << pattern << add1 << add2 << endl;
   vector<int>ans;
   for(int i=0, g=0; ; i++){
     if(g == 0 && i >= len1 && i >= len2)break;
     int x = g;
     if(i < len1) x += add1[i]-'0';
     if(i < len2) x += add2[i]-'0';
+    cout << "x: " << x << endl;
     int test = (int)(pattern[i]-'0');
+    cout <<"test:" <<  test << endl;
     if(i < 20 && test != 0){
       ans.push_back(x % test);
-      g = x / test;
+      g = x/test;
+      cout << "tag１" << endl;
     }
     else
     {
       ans.push_back(x % 10);
       g = x/10;
+      cout << "tag2" << endl;
     }
+    cout <<"g: " << g << endl;
   }
 
   for(int i = ans.size()-1; i >= 0 ; i--)
