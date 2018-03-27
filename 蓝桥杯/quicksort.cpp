@@ -11,25 +11,12 @@ int a[1000];
 
 
 void quickSort(int l,int r){
-	
+
 	if(l > r)
 		return ;
 	int i = l;
 	int j = r;
 	int ttmp = a[l];
-	
-//	while(1){
-//		while(a[j] > ttmp)
-//			j--;
-//		while(a[i] < ttmp)
-//			i++;
-//	 	
-//    	int tmp = a[i];
-//    	a[i] = a[j];
-//    	a[j] = tmp;
-//	 	if(i >= j)
-//			break; 
-//	}
 
 	while(i != j){
 		while(a[j] >= ttmp && i < j)
@@ -40,11 +27,11 @@ void quickSort(int l,int r){
 		{
 			swap(a[i],a[j]);
 		}
-	}	
+	}
 	a[l] = a[j];
 	a[j] = ttmp;
 	quickSort(l,j-1);
-	quickSort(j+1,r);	
+	quickSort(j+1,r);
 }
 
 int main(){
@@ -58,6 +45,6 @@ int main(){
 	for(int i = 0 ; i < n ; i++)
 		cout << a[i] << " ";
 	cout << endl;
-	
+
 	return 0;
 }

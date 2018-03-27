@@ -7,21 +7,21 @@ string pattern;
 
 void reverse(){
   int len = add1.length();
-  for(int i = 0 ; i <= len/2; i++){
+  for(int i = 0 ; i < len/2; i++){
     char tmp = add1[i];
     add1[i] = add1[len-1-i];
     add1[len-i-1] = tmp;
   }
 
   len = add2.length();
-  for(int i = 0 ; i <= len/2; i++){
+  for(int i = 0 ; i < len/2; i++){
     char tmp = add2[i];
     add2[i] = add2[len-1-i];
     add2[len-i-1] = tmp;
   }
 
   len = pattern.length();
-  for(int i = 0 ; i <= len/2; i++){
+  for(int i = 0 ; i < len/2; i++){
     char tmp = pattern[i];
     pattern[i] = pattern[len-1-i];
     pattern[len-i-1] = tmp;
@@ -32,42 +32,55 @@ int main()
 {
   freopen("in.txt","r",stdin);
   stringstream ss1,ss2,ss3;
-  int a,b,c;
+  long long a,b,c;
   cin >> a >> b >> c;
+
+  // cout << a << endl;
+  // cout << b << endl;
+  // cout << c << endl;
+
   ss1 << a;
   ss1 >> pattern;
   ss2 << b;
   ss2 >> add1;
   ss3 << c;
   ss3 >> add2;
+
+  // cout << pattern << endl;
+  // cout <<  add1 << endl;
+  // cout << add2 << endl;
+
   // cout << pattern.length() << add1.length() << add2.length()<< endl;
   // cin >> pattern >> add1 >> add2;
   // cout << pattern.length() << add1.length() << add2.length()<< endl;
   reverse();
+
   int len1 = add1.length();
   int len2 = add2.length();
-  // cout << pattern << add1 << add2 << endl;
+
+  // cout << pattern << endl;
+  // cout <<  add1 << endl;
+  // cout << add2 << endl;
+
   vector<int>ans;
   for(int i=0, g=0; ; i++){
+
     if(g == 0 && i >= len1 && i >= len2)break;
+
     int x = g;
     if(i < len1) x += add1[i]-'0';
     if(i < len2) x += add2[i]-'0';
-    cout << "x: " << x << endl;
     int test = (int)(pattern[i]-'0');
-    cout <<"test:" <<  test << endl;
-    if(i < 20 && test != 0){
+    if(i <= 20 && test != 0){
       ans.push_back(x % test);
       g = x/test;
-      cout << "tag１" << endl;
+      // cout << "tag１" << endl;
     }
     else
     {
       ans.push_back(x % 10);
       g = x/10;
-      cout << "tag2" << endl;
     }
-    cout <<"g: " << g << endl;
   }
 
   for(int i = ans.size()-1; i >= 0 ; i--)
