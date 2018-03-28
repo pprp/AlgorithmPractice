@@ -11,7 +11,7 @@ void quickSort(int l, int r){
   int tmp = arr[l];
   int i = l;
   int j = r;
-  cout << i << " " << j << endl;
+  // cout << i << " " << j << endl;
   while(i != j){
     while(arr[j] >= tmp && i < j)
       j--;
