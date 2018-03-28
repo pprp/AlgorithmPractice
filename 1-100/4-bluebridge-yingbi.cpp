@@ -1,3 +1,5 @@
+
+// 历届试题 矩阵翻硬币 - 模拟的方法 只能解决小规模问题 
 #include <iostream>
 #include <cstring>
 #include <cstdio>
