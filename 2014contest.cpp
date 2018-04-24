@@ -1,20 +1,33 @@
 #include <iostream>
-#include <cstdio>
-
 using namespace std;
 
-typedef unsigned long long ll;
+long long a, b, ans;
+int nCase, cCase;
 
-ll tta, ttb;
-
-int main()
-{
-    int T;
-    cin >> T;
-    for(int i = 1 ; i <= T; i++)
-    {
-        cin >> tta >> ttb;
+long long calc(long long a, long long b) {
+    long long ret = 0;
+    while (b) {
+        long long t = b;
+        ret += a / b;
+        b = a % b;
+        a = t;
     }
+    return ret + 1;
+}
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin >> nCase;
+    while (nCase--) {
+        cin >> a >> b;
+        if (a == 0 && b == 0) {
+            ans = 1;
+        } else if (a == 0 || b == 0) {
+            ans = 2;
+        } else {
+            ans = calc(a, b);
+        }
+        cout << "Case #" << ++cCase << ": " << ans << endl;
+    }
     return 0;
 }
